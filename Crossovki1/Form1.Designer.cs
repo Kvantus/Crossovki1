@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,11 +42,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(1125, 600);
             this.dataGridView1.TabIndex = 0;
             // 
+            // BRefresh
+            // 
+            this.BRefresh.Location = new System.Drawing.Point(1153, 12);
+            this.BRefresh.Name = "BRefresh";
+            this.BRefresh.Size = new System.Drawing.Size(141, 41);
+            this.BRefresh.TabIndex = 1;
+            this.BRefresh.Text = "Обновить";
+            this.BRefresh.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 624);
+            this.Controls.Add(this.BRefresh);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button BRefresh;
     }
 }
 

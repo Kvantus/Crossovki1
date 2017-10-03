@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Data_BaseModel_Unrecognized" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="f_REPORT_Mega_Base_Unrecognized_" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="_REPORT_Mega_Base_Unrecognized_">
+          <Parameter Name="supplier_id" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Хранилище Data_BaseModel_UnrecognizedContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Data_BaseModel_Unrecognized" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Data_BaseEntities_Unrecognized" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="f_REPORT_Mega_Base_Unrecognized_" ReturnType="Collection(Data_BaseModel_Unrecognized.f_REPORT_Mega_Base_Unrecognized__Result)">
+            <Parameter Name="supplier_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="f_REPORT_Mega_Base_Unrecognized__Result">
+          <Property Type="String" Name="Supplier" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="OEM" Nullable="true" />
+          <Property Type="String" Name="Производитель" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="Номер_Производителя" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Оригинальный_Номер" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Название" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Единица" Nullable="true" MaxLength="10" />
+          <Property Type="Double" Name="Цена_По_Прайсу" Nullable="true" />
+          <Property Type="String" Name="Наличие" Nullable="true" MaxLength="9" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Data_BaseModel_UnrecognizedContainer" CdmEntityContainer="Data_BaseEntities_Unrecognized" >
+          <FunctionImportMapping FunctionImportName="f_REPORT_Mega_Base_Unrecognized_" FunctionName="Хранилище Data_BaseModel_Unrecognized.f_REPORT_Mega_Base_Unrecognized_">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Data_BaseModel_Unrecognized.f_REPORT_Mega_Base_Unrecognized__Result">
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="OEM" ColumnName="OEM" />
+                <ScalarProperty Name="Производитель" ColumnName="Производитель" />
+                <ScalarProperty Name="Номер_Производителя" ColumnName="Номер_Производителя" />
+                <ScalarProperty Name="Оригинальный_Номер" ColumnName="Оригинальный_Номер" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Единица" ColumnName="Единица" />
+                <ScalarProperty Name="Цена_По_Прайсу" ColumnName="Цена_По_Прайсу" />
+                <ScalarProperty Name="Наличие" ColumnName="Наличие" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
