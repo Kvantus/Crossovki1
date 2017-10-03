@@ -28,47 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGTable = new System.Windows.Forms.DataGridView();
             this.BRefresh = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.LabelMain = new System.Windows.Forms.Label();
+            this.LAbelCount = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DGTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DGTable
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1125, 600);
-            this.dataGridView1.TabIndex = 0;
+            this.DGTable.AllowUserToOrderColumns = true;
+            this.DGTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGTable.Location = new System.Drawing.Point(12, 38);
+            this.DGTable.Name = "DGTable";
+            this.DGTable.Size = new System.Drawing.Size(1125, 574);
+            this.DGTable.TabIndex = 0;
             // 
             // BRefresh
             // 
-            this.BRefresh.Location = new System.Drawing.Point(1153, 12);
+            this.BRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BRefresh.Location = new System.Drawing.Point(1143, 38);
             this.BRefresh.Name = "BRefresh";
             this.BRefresh.Size = new System.Drawing.Size(141, 41);
             this.BRefresh.TabIndex = 1;
             this.BRefresh.Text = "Обновить";
             this.BRefresh.UseVisualStyleBackColor = true;
+            this.BRefresh.Click += new System.EventHandler(this.BRefresh_Click);
+            // 
+            // LabelMain
+            // 
+            this.LabelMain.AutoSize = true;
+            this.LabelMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelMain.Location = new System.Drawing.Point(12, 9);
+            this.LabelMain.Name = "LabelMain";
+            this.LabelMain.Size = new System.Drawing.Size(245, 20);
+            this.LabelMain.TabIndex = 2;
+            this.LabelMain.Text = "Необходимо получить таблицу";
+            // 
+            // LAbelCount
+            // 
+            this.LAbelCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LAbelCount.AutoSize = true;
+            this.LAbelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LAbelCount.Location = new System.Drawing.Point(1139, 592);
+            this.LAbelCount.Name = "LAbelCount";
+            this.LAbelCount.Size = new System.Drawing.Size(58, 20);
+            this.LAbelCount.TabIndex = 3;
+            this.LAbelCount.Text = "Итого:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 624);
+            this.Controls.Add(this.LAbelCount);
+            this.Controls.Add(this.LabelMain);
             this.Controls.Add(this.BRefresh);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGTable);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGTable;
         private System.Windows.Forms.Button BRefresh;
+        private System.Windows.Forms.Label LabelMain;
+        private System.Windows.Forms.Label LAbelCount;
     }
 }
 
