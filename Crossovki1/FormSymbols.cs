@@ -72,9 +72,35 @@ namespace Crossovki1
                     .Replace(quotes, "");
             }
 
-            MainForm.DGTable.DataSource = MainForm.MyFilteredList;
+
+            //sortedList.DataSource = MainForm.MyFilteredList;
+            //DataGridViewColumn column = MainForm.DGTable.Columns[3];
+            //MainForm.DGTable.Sort(column, ListSortDirection.Ascending);
+
+            //Dictionary<string, int> dicArticles = new Dictionary<string, int>();
+
+            List<string> coloredList = new List<string>();
+
+            for (int i = 0; i < MainForm.DGTable.RowCount; i++)
+            {
+                coloredList.Add(MainForm.DGTable.Rows[i].Cells[3].Value.ToString());
+            }
+
+            foreach (var article in coloredList.Distinct())
+            {
+                if (coloredList.Where(x => x == article).Count() > 1)
+                {
+                    for (int i = 0; i < MainForm.DGTable.RowCount; i++)
+                        {
+                            if (MainForm.DGTable[3, i].Value.ToString() == article)
+                                MainForm.DGTable.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                        }
+                }
+            }
+
             MainForm.DGTable.Refresh();
             this.Close();
+
         }
     }
 }

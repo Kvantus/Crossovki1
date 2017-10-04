@@ -28,6 +28,19 @@ namespace Crossovki1
             var myQuery = from items in content.f_REPORT_Mega_Base_Unrecognized_(null)
                           select items;
             MyList = myQuery.ToList();
+            foreach (var row in MyList)
+            {
+                if (row.Supplier == "АвтоСпутник_1-2" ||
+                    row.Supplier == "АвтоСпутник_1-3" ||
+                    row.Supplier == "Ренисcанс" ||
+                    row.Supplier == "Нормавто (Teknorot)" ||
+                    row.Supplier == "ЛиАрт")
+                {
+                    byte[] tempBytes = Encoding.Default.GetBytes(row.Название);
+                    row.Название = Encoding.UTF8.GetString(tempBytes);
+                }
+            }
+
             DGTable.DataSource = MyList;
 
             LAbelCount.Text = "Итого: " + DGTable.RowCount;
