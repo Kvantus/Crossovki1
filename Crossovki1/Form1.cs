@@ -13,6 +13,8 @@ namespace Crossovki1
     public partial class Form1 : Form
     {
         Data_BaseEntities_Unrecognized content = new Data_BaseEntities_Unrecognized();
+        public List<f_REPORT_Mega_Base_Unrecognized__Result> MyList { get; set; }
+        public List<f_REPORT_Mega_Base_Unrecognized__Result> MyFilteredList { get; set; }
 
         public Form1()
         {
@@ -25,11 +27,57 @@ namespace Crossovki1
             Application.DoEvents();
             var myQuery = from items in content.f_REPORT_Mega_Base_Unrecognized_(null)
                           select items;
-            DGTable.DataSource = myQuery.ToList();
+            MyList = myQuery.ToList();
+            DGTable.DataSource = MyList;
 
             LAbelCount.Text = "Итого: " + DGTable.RowCount;
 
             LabelMain.Text = "Итоговая таблица:";
+
+            List<string> uniqueRows = DGTable.Rows.Cast<DataGridViewRow>()
+                           .Where(x => x.Cells[2].Value != null)
+                           .Select(x => x.Cells[2].Value.ToString())
+                           .Distinct()
+                           .ToList();
+
+            ComboBrands.Items.Clear();
+            foreach (var row in uniqueRows)
+            {
+                ComboBrands.Items.Add(row);
+            }
+
+            ComboBrands.Sorted = true;
+        }
+
+        private void BChooseBrand_Click(object sender, EventArgs e)
+        {
+            if (ComboBrands.SelectedItem == null)
+            {
+                MessageBox.Show("Не выбранд брэнд");
+                return;
+            }
+
+            MyFilteredList = new List<f_REPORT_Mega_Base_Unrecognized__Result>();
+            foreach (var item in MyList)
+            {
+                if (item.Производитель == ComboBrands.SelectedItem.ToString())
+                {
+                    MyFilteredList.Add(item);
+                }
+            }
+
+            DGTable.DataSource = MyFilteredList;
+
+            LAbelCount.Text = "Итого: " + DGTable.RowCount;
+
+            //DGTable.Rows[1].Cells[3].Style.BackColor = Color.GreenYellow;
+            
+        }
+
+        private void BSymbolsForm_Click(object sender, EventArgs e)
+        {
+            FormSymbols formSymbols = new FormSymbols(this);
+            formSymbols.Show();
         }
     }
 }
